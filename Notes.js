@@ -6,3 +6,12 @@
 // # npx cypress run -e TAGS='@login' --headed
 // # npx cypress run -e TAGS='@login or @contact-us' -- headed
 // # npx cypress run -e TAGS='(@login or @regresssion) and not @smoke' --headed
+
+// Hooks notes:
+// Can select more than one tag -
+
+// Before({tags:"@regression and @smoke"}, () => {
+// })
+
+// Before({tags:"@regression or @Smoke "}, () => {
+// })

@@ -2,9 +2,8 @@
 
 Feature: WebdriverUniversity - Login Page
 
-        # Background: Pre conditions
-        # Given I navigate to the webdriveruniversity homepage
-        # When I click the login portal button
+        Background: Pre conditions
+                When I wait for 1 seconds
 
 
         Scenario Outline: Validate login page
