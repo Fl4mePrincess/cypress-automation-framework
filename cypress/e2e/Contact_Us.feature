@@ -13,7 +13,7 @@ Feature: WebdriverUniversity - Contact Us Page
         And I type a comments
         And I click the submit button
         Then I should be presented with a successful contact us submission message
-    # @smoke
+
     Scenario: Invalid Contact Us Form Submission
         And I type a first name
         And I type a last name
