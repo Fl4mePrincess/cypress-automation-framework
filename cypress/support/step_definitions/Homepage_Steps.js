@@ -13,11 +13,14 @@ Given(`I navigate to the webdriveruniversity homepage`, () => {
 })
 
 When(`I click on the contact us button`, () => {
-    cy.get("#contact-us").invoke("removeAttr", "target").click();
-    
+    cy.clickAndOpenLink_InSameTab("#contact-us");
 })
 
 When(`I click the login portal button`, () => {
-    cy.get("#login-portal").invoke("removeAttr", "target").click(); 
+    cy.clickAndOpenLink_InSameTab("#login-portal");
+ })
+
+ When(`I click the to do list button`, () => {
+    cy.clickAndOpenLink_InSameTab("#to-do-list");
  })
 
