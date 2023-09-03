@@ -1,28 +1,33 @@
 // <reference types="cypress" /> <- for cypress commands
 import { When,Then } from "@badeball/cypress-cucumber-preprocessor";
+import Contact_Us_PO from "../page_objects/Contact_Us_PO";
+
+const contactUsPO = new Contact_Us_PO();
 
 When(`I type a first name`, () => {
-    cy.get('[name="first_name"]').type("Joe");
+    contactUsPO.type_FirstName("John");
 })
 
 When(`I type a last name`, () => {
-    cy.get('[name="last_name"]').type("Smith");
+    contactUsPO.type_LastName("Smith");
 })
 
 When(`I enter an email address`, () => {
-    cy.get('[name="email"]').type("yes@mail.com");
+    contactUsPO.type_Email("js@mail.com");
 })
 
 When(`I type a comments`, () => {
-    cy.get('textarea[name="message"]').type("Hello World");
+    contactUsPO.type_Comment("Hello World");
 })
 
 When(`I click the submit button`, () => {
-    cy.get('[type="submit"]').click();
+    contactUsPO.clickOn_Submit_Button();
 })
 
 Then(`I should be presented with a successful contact us submission message`, () => {
-    cy.get('h1').should('have.text', 'Thank You for your Message!');
+    //cy.get('h1').should('have.text', 'Thank You for your Message!');
+    //Improvement after using POM:
+    contactUsPO.validate_Submission_Header('Thank You for your Message!');
 })
 
 Then('I should be presented with an unsuccessful contact us submission message', () => {
@@ -30,31 +35,32 @@ Then('I should be presented with an unsuccessful contact us submission message',
 })
 
 When('I type a specific first name {string}', (firstName) => {
-    cy.get('[name="first_name"]').type(firstName);
+    contactUsPO.type_FirstName(firstName);
 })
 
 When('I type a specific last name {string}', (lastName) => {
-    cy.get('[name="last_name"]').type(lastName);
+    contactUsPO.type_LastName(lastName);
 })
 
 When('I type a specific email address {string}', (email) => {
-    cy.get('[name="email"]').type(email);
+    contactUsPO.type_Email(email);
 })
 
 When('I type a specific word {string} and a number of {int} within the comment input field', (word, number) => {
-    cy.get('textarea[name="message"]').type(word + " " + number);
+    contactUsPO.type_Comment(word + " " + number);
 })
 
 When('I type a first name {word} and a last name {string}', (firstName, lastName) => {
-    cy.get('[name="first_name"]').type(firstName);
-    cy.get('[name="last_name"]').type(lastName);
+    contactUsPO.type_FirstName(firstName);
+    contactUsPO.type_LastName(lastName);
 })
 
 When('I type an {string} and a comment {string}', (email, comment) => {
-    cy.get('[name="email"]').type(email);
-    cy.get('textarea[name="message"]').type(comment);
+    contactUsPO.type_Email(email);
+    contactUsPO.type_Comment(comment);
 })
 
 Then('I should be presented with header text {string}', (message) => {
-    cy.xpath("//h1 | //body").contains(message); //all logic
+    //cy.xpath("//h1 | //body").contains(message); //all logic
+    contactUsPO.validate_Submission_Header(message);
 })

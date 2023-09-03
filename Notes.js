@@ -6,6 +6,8 @@
 // # npx cypress run -e TAGS='@login' --headed
 // # npx cypress run -e TAGS='@login or @contact-us' -- headed
 // # npx cypress run -e TAGS='(@login or @regresssion) and not @smoke' --headed
+//use 'npm run' and script name to run custom scripts
+
 
 // Hooks notes:
 // Can select more than one tag -
@@ -15,3 +17,8 @@
 
 // Before({tags:"@regression or @Smoke "}, () => {
 // })
+
+//Page Objects
+//use 'super' to call methods
+//To inherit use: import Base_PO from "./Base_PO";
+//Always need to include "export default pageObjectName;"" at the end of page object files

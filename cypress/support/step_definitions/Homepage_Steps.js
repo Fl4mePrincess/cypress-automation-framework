@@ -1,26 +1,30 @@
 // <reference types="cypress" /> <- for cypress commands
 import { Given, When, Before } from "@badeball/cypress-cucumber-preprocessor";
 
-const url = "http://www.webdriveruniversity.com/";
+import Base_PO from "../page_objects/Base_PO";
+import Homepage_PO from "../page_objects/Homepage_PO";
+
+//const basePage = new Base_PO();
+const homePage = new Homepage_PO();
 
 Before(() => {
-    cy.log("Executing commands inside homepage steps.");
-})
+  cy.log("Executing commands inside homepage steps.");
+});
 
 Given(`I navigate to the webdriveruniversity homepage`, () => {
-    cy.visit(url);
-    
-})
+  //cy.visit(url);
+  //basePage.navigate("");
+  homePage.navigate("");
+});
 
 When(`I click on the contact us button`, () => {
-    cy.clickAndOpenLink_InSameTab("#contact-us");
-})
+  homePage.clickOn_ContacUs_Button();
+});
 
 When(`I click the login portal button`, () => {
-    cy.clickAndOpenLink_InSameTab("#login-portal");
- })
+  homePage.clickOn_Login_Button();
+});
 
- When(`I click the to do list button`, () => {
-    cy.clickAndOpenLink_InSameTab("#to-do-list");
- })
-
+When(`I click the to do list button`, () => {
+  cy.clickAndOpenLink_InSameTab("#to-do-list");
+});

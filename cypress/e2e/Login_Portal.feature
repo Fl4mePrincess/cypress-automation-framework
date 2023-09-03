@@ -7,8 +7,7 @@ Feature: WebdriverUniversity - Login Page
 
 
         Scenario Outline: Validate login page
-                Given I navigate to the webdriveruniversity homepage
-                When I click the login portal button
+                Given I navigate to the webdriveruniversity login page
                 And I type a username <userName> and password <password>
                 And I click the login button
                 Then I should be presented with a alert box which contains text '<alertText>'
