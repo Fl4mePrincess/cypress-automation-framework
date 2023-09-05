@@ -1,11 +1,15 @@
 // <reference types="cypress" /> <- for cypress commands
-import { Given, When, Before } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Before, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 import Base_PO from "../page_objects/Base_PO";
 import Homepage_PO from "../page_objects/Homepage_PO";
 
 //const basePage = new Base_PO();
 const homePage = new Homepage_PO();
+
+elements = {
+  checkboxHeading: () => cy.get('h1')
+};
 
 Before(() => {
   cy.log("Executing commands inside homepage steps.");
@@ -27,4 +31,12 @@ When(`I click the login portal button`, () => {
 
 When(`I click the to do list button`, () => {
   cy.clickAndOpenLink_InSameTab("#to-do-list");
+});
+
+When(`I click the checkboxes button`, () => {
+  homePage.clickOn_Checbox_Button();
+});
+
+Then(`the checkboxes page is displayed`, () =>{
+  cy.get('h1').should('have.text', `Dropdown Menu(s), Checkboxe(s) & Radio Button(s)`);
 });

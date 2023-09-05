@@ -12,6 +12,9 @@ class Homepage_PO extends Base_PO {
     clickOn_Login_Button() {
         cy.clickAndOpenLink_InSameTab("#login-portal");
     }
+    clickOn_Checbox_Button() {
+        cy.clickAndOpenLink_InSameTab("#dropdown-checkboxes-radiobuttons");
+    }
 }
 
 export default Homepage_PO;
