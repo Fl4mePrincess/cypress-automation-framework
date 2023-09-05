@@ -1,3 +1,4 @@
+@regression
 Feature: webdriveruniversity - Homepage
 
 Scenario: Homepage
