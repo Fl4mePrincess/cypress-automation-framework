@@ -55,4 +55,4 @@
     //nth-last-child(odd)   (example li:nth-last-child(1)) <- selects all last list items
     //nth-of-type(odd)      (example button:nth-of-type(odd)) <- selects all odd buttons
     //:first-child          (example [class*='btn']:first-child) <- selects all first button elements
-    //:last-child           (example [class*='btn']:last-child <- selects all first button elements
+    //:last-child           (example [class*='btn']:last-child) <- selects all first button elements
