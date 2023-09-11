@@ -1,3 +1,4 @@
 {
-    "baseURL": "http://www.webdriveruniversity.com/"
+    "baseURL": "http://www.webdriveruniversity.com/",
+    "testURL": "https://selectors.webdriveruniversity.com/"
 }
