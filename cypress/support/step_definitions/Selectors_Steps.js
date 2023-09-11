@@ -7,7 +7,7 @@ Given('I navigate to the selectors webdriveruniversity page', () => {
     selectorsPO.navigateTest();
 });
 
-When('I select the lettuce radio button', () => {
+When('I select the first radio button', () => {
     cy.get(`input[name='vegetable']:nth-child(1)`).click()
 });
 
