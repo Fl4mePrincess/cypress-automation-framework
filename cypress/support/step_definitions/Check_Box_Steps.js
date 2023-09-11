@@ -20,7 +20,7 @@ Then(`the check box is no longer checked`, () => {
 });
 
 When(`I click the drop down list option`, () => {
-    cy.get("#dropdowm-menu-1").select("SQL");
+  cy.get("#dropdowm-menu-1").select("SQL");
 });
 
 //Attempting to cycle through drop down options - not working
@@ -28,6 +28,6 @@ When(`I click the drop down list option`, () => {
 //     checkBoxPO.Select_DropDownItem(dropDownItem);
 //   });
 
- Then(`the selected drop down list item is displayed in the box`, () => {
-     cy.get("#dropdowm-menu-1").should("have.value", "sql");
- });
+Then(`the selected drop down list item is displayed in the box`, () => {
+  cy.get("#dropdowm-menu-1").should("have.value", "sql");
+});

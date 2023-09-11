@@ -56,3 +56,5 @@
     //nth-of-type(odd)      (example button:nth-of-type(odd)) <- selects all odd buttons
     //:first-child          (example [class*='btn']:first-child) <- selects all first button elements
     //:last-child           (example [class*='btn']:last-child) <- selects all first button elements
+
+    //cy.get('#portfolioModal1 > .modal-dialog > .modal-content > .modal-body > .container > .row > .col-lg-8 > .btn')

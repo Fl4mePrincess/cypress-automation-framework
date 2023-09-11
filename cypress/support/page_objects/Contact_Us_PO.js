@@ -3,7 +3,7 @@ class Contact_Us_PO extends Base_PO {
   elements = {
     comment_TextField: () => cy.get('textarea[name="message"]'),
     submit_Button: () => cy.get('[type="submit"]'),
-    submission_Header_Text: () => cy.xpath("//h1 | //body")
+    submission_Header_Text: () => cy.xpath("//h1 | //body"),
   };
 
   navigateTo_ContactUs_Page() {
