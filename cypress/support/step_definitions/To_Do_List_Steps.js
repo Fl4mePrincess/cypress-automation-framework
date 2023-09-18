@@ -20,3 +20,11 @@ When(`I type a new list item into the text field {string} and press enter`, (lis
 Then(`the new list item is added to the To-Do list`, () => {
     cy.get(`li:nth-child(4)`).should('contain', 'Feed the dragons');
 });
+
+When(`I click the trash can icon next to a list item`, () => {
+  cy.get(`li:nth-child(2) [class='fa fa-trash']`).click();
+});
+
+Then(`the list item is removed`, () => {
+  cy.get('li:nth-child(2)').should('contain', ' Practice magic');
+});

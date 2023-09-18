@@ -13,3 +13,7 @@ Scenario: Adding a new list item
 And I select the plus icon to add a new list item
 And I type a new list item into the text field "Feed the dragons" and press enter
 Then the new list item is added to the To-Do list
+
+Scenario: Deleting a To-Do list item
+And I click the trash can icon next to a list item
+Then the list item is removed
