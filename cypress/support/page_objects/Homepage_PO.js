@@ -15,6 +15,10 @@ class Homepage_PO extends Base_PO {
     clickOn_Checbox_Button() {
         cy.clickAndOpenLink_InSameTab("#dropdown-checkboxes-radiobuttons");
     }
+
+    clickOn_ToDoList_Button() {
+        cy.clickAndOpenLink_InSameTab("#to-do-list");
+    }
 }
 
 export default Homepage_PO;

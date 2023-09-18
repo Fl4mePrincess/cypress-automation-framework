@@ -40,3 +40,11 @@ When(`I click the checkboxes button`, () => {
 Then(`the checkboxes page is displayed`, () =>{
   cy.get('h1').should('have.text', `Dropdown Menu(s), Checkboxe(s) & Radio Button(s)`);
 });
+
+When(`I click the To-Do List button`, () => {
+homePage.clickOn_ToDoList_Button();
+});
+
+Then(`the button click page is displayed`, () => {
+cy.get(`h1`).should('contain', `TO-DO LIST`);
+});
