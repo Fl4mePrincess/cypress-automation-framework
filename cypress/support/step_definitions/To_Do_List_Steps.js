@@ -12,12 +12,9 @@ When(`I select the plus icon to add a new list item`, () => {
   cy.get(`#plus-icon`).click();
 });
 
-When(`I type a new list item into the text field {string}`, (listItem) => {
-  cy.get(`input[type='text']`).type(listItem);
-});
-
-When(`I press Enter`, () => {
-  cy.get(`input[type='text']`).type('{enter}');
+When(`I type a new list item into the text field {string} and press enter`, (listItem) => {
+  cy.get(`input[type='text']`).type(listItem)
+  .type('{enter}');
 });
 
 Then(`the new list item is added to the To-Do list`, () => {

@@ -1,3 +1,4 @@
+@regresion
 Feature: To-Do-List page selections
 
 Background:
@@ -10,6 +11,5 @@ Then the first item is marked as completed
 
 Scenario: Adding a new list item
 And I select the plus icon to add a new list item
-And I type a new list item into the text field "Feed the dragons"
-And I press Enter
+And I type a new list item into the text field "Feed the dragons" and press enter
 Then the new list item is added to the To-Do list
