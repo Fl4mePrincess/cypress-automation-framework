@@ -5,7 +5,8 @@ import Contact_Us_PO from "../page_objects/Contact_Us_PO";
 const contactUsPO = new Contact_Us_PO();
 
 When(`I type a first name`, () => {
-  contactUsPO.type_FirstName("John");
+  //without method in PO file
+  cy.get('[name="first_name"]').type("John");
 });
 
 When(`I type a last name`, () => {
@@ -41,7 +42,7 @@ Then(
 );
 
 When("I type a specific first name {string}", (firstName) => {
-  contactUsPO.type_FirstName(firstName);
+  cy.get('[name="first_name"]').type(firstName);
 });
 
 When("I type a specific last name {string}", (lastName) => {
@@ -62,7 +63,7 @@ When(
 When(
   "I type a first name {word} and a last name {string}",
   (firstName, lastName) => {
-    contactUsPO.type_FirstName(firstName);
+    cy.get('[name="first_name"]').type(firstName);
     contactUsPO.type_LastName(lastName);
   }
 );

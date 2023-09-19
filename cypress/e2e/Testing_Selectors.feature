@@ -17,7 +17,7 @@ Feature: Testing different selectors
         When I select each radio button
         Then each radio button is selected
 
-    Scenario: Selecting a checkbox
+    Scenario: Selecting a the first checkbox
         When I select the first checkbox option
         Then the first checkbox is checked
 
@@ -25,6 +25,11 @@ Feature: Testing different selectors
         When I uncheck a selected checkbox
         Then the check box is unchecked
 
-    Scenario: Selecting all the checkboxes
+    Scenario: Selecting and unselecting all the checkboxes
         When I select all the checkboxes
-        Then all the checkboxes are checked
+        And I unselect all the checkboxes
+        Then all the checkboxes are unchecked
+        
+    Scenario: Selecting a drop down list
+        When I select a specific option from the fruits drop down menu 
+        Then the selection appears in the drop down box    

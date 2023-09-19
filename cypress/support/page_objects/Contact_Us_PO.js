@@ -10,10 +10,6 @@ class Contact_Us_PO extends Base_PO {
     super.navigate("/Contact-Us/contactus.html");
   }
 
-  type_FirstName(firstName) {
-    cy.get('[name="first_name"]').type(firstName);
-  }
-
   type_LastName(lastName) {
     cy.get('[name="last_name"]').type(lastName);
   }

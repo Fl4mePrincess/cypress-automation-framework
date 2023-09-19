@@ -33,12 +33,12 @@ Then("each radio button is selected", () => {
 });
 
 When(`I select the first checkbox option`, () => {
-  cy.get(`input[type="checkbox"][value='option-1']`).should('be.visible')
-  cy.get(`input[type="checkbox"][value='option-1']`).check();
+  cy.get(`input[type="checkbox"]`).first().should('be.visible')
+  cy.get(`input[type="checkbox"]`).first().check();
 });
 
 Then(`the first checkbox is checked`, () => {
-  cy.get(`input[type="checkbox"][value='option-1']`).should(`be.checked`);
+  cy.get(`input[type="checkbox"]`).first().should(`be.checked`);
 
 });
 
@@ -56,6 +56,19 @@ When(`I select all the checkboxes`, () => {
 cy.get(`input[type="checkbox"][value*='option']`).check();
 });
 
-Then(`all the checkboxes are checked`, () => {
+When(`I unselect all the checkboxes`, () => {
   cy.get(`input[type="checkbox"][value*='option']`).should('be.checked');
+  cy.get(`input[type="checkbox"][value*='option']`).uncheck();
+});
+
+Then(`all the checkboxes are unchecked`, () => {
+  cy.get(`input[type="checkbox"][value*='option']`).should('not.be.checked');
+});
+
+When(`I select a specific option from the fruits drop down menu`, () => {
+  cy.get(`#fruit-selects`).select("Pear");
+});
+
+Then(`the selection appears in the drop down box`, () => {
+cy.get(`#fruit-selects`).should('have.value', 'pear');
 });
