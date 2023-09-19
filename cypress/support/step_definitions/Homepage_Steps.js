@@ -48,3 +48,11 @@ homePage.clickOn_ToDoList_Button();
 Then(`the button click page is displayed`, () => {
 cy.get(`h1`).should('contain', `TO-DO LIST`);
 });
+
+When(`I click the AJAX Loader button`, () => {
+  homePage.clickOn_AJAXLoader_Button();
+});
+
+Then(`the AJAX loader page is displayed`, () => {
+cy.get('.navbar-brand').should('contain', '(Ajax-Loader)');
+});

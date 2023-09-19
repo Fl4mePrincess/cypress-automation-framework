@@ -1,19 +1,19 @@
 @regresion
 Feature: To-Do-List page selections
 
-Background:
-Given I navigate to the webdriveruniversity homepage
-When I click the To-Do List button
+    Background:
+        Given I navigate to the webdriveruniversity homepage
+        When I click the To-Do List button
 
-Scenario: Checking off the first list item
-And I select the first list item
-Then the first item is marked as completed
+    Scenario: Checking off the first list item
+        And I select the first list item
+        Then the first item is marked as completed
 
-Scenario: Adding a new list item
-And I select the plus icon to add a new list item
-And I type a new list item into the text field "Feed the dragons" and press enter
-Then the new list item is added to the To-Do list
+    Scenario: Adding a new list item
+        And I select the plus icon to add a new list item
+        And I type a new list item into the text field "Feed the dragons" and press enter
+        Then the new list item is added to the To-Do list
 
-Scenario: Deleting a To-Do list item
-And I click the trash can icon next to a list item
-Then the list item is removed
+    Scenario: Deleting a To-Do list item
+        And I click the trash can icon next to a list item
+        Then the list item is removed
